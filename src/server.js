@@ -1,14 +1,22 @@
-// importar o pacote express para o js
-const express = require('express');
+const app = require('./app');
 
-//criando uma instancia de express na variavel app
-const app = express();
+const PORT = app.get('port')
 
-//definindo a porta
-const PORT = 5000;
 
 app.get('/api/teste', (request, response) => { 
-    response.send('nao é um bambole afiado')
+    response.send('Listar')
+ });
+
+ app.post('/api/teste', (request, response) => { 
+    response.send('salvar')
+ });
+
+ app.put('/api/teste', (request, response) => { 
+    response.send('editar')
+ });
+
+ app.delete('/api/teste', (request, response) => { 
+    response.send('excluir')
  });
 
 
